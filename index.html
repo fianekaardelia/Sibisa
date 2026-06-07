@@ -1,0 +1,323 @@
+<!DOCTYPE html>
+<html lang="id">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>SIBISA - Layanan BK Digital</title>
+  <link rel2="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Space+Grotesk:wght@400;500;600&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="style.css">
+</head>
+<body>
+
+<div class="app-shell">
+
+  <aside class="sidebar">
+    <div class="sidebar-brand">
+      <div class="logo-row">
+        <div class="logo-circle">
+          <img src="image/sibisa.jpeg" alt="Logo SiBisa">
+        </div>
+        <div>
+          <div class="brand-name">SIBISA</div>
+          <div class="brand-sub">Layanan BK Digital</div>
+        </div>
+      </div>
+    </div>
+    <div class="sidebar-school">
+      <span class="school-badge">Layanan BK Digital</span>
+    </div>
+    <nav class="sidebar-nav">
+      <button class="nav-item active" id="nav-home" onclick="showScreen('screen-home')">
+        <span class="nav-icon">🏠</span> Beranda
+      </button>
+      <button class="nav-item" id="nav-biodata" onclick="showScreen('screen-biodata')">
+        <span class="nav-icon">👨‍🏫</span> Biodata Guru BK
+      </button>
+      <button class="nav-item" id="nav-jadwal" onclick="showScreen('screen-jadwal')">
+        <span class="nav-icon">🗓</span> Cari Jadwal
+      </button>
+      <button class="nav-item" id="nav-konsul" onclick="showScreen('screen-konsul-pilih')">
+        <span class="nav-icon">💬</span> Konsultasi
+      </button>
+      <button class="nav-item" id="nav-helpdesk" onclick="showScreen('screen-helpdesk')">
+        <span class="nav-icon">🆘</span> Help / CP
+      </button>
+    </nav>
+    <div class="sidebar-footer">© 2025 SIBISA<br>Jam Kerja: 07.00 – 15.00</div>
+  </aside>
+
+  <div class="main-content">
+
+    <div class="topbar">
+      <span class="topbar-title" id="topbar-title">Beranda</span>
+      <div class="topbar-school">
+        <div class="school-logo-top">
+            <img src="image/smk.jpeg" alt="Logo Sekolah" style="width: 100%; height: 100%; border-radius: 50%; object-fit: cover;">
+        </div>
+      </div>
+    </div>
+
+    <div class="device-frame">
+      <div class="device-notch mobile-view"></div>
+
+      <div class="screen active" id="screen-home">
+        <div class="mobile-view">
+          <div class="mob-navbar">
+            <div class="brand">
+              <div class="logo-circle"><img src="image/sibisa.jpeg" alt="Logo SiBisa"></div>
+              <span class="brand-name">SIBISA</span>
+            </div>
+            <div class="school-logo">
+              <img src="image/smk.jpeg" alt="Logo Sekolah" style="width: 100%; height: 100%; border-radius: 50%; object-fit: cover;">
+            </div>
+          </div>
+          <div class="mob-hero">
+            <h1>SIBISA</h1>
+            <div class="tagline">"Hilangkan rasa malu dan ragu, karena Si Bisa selalu siap bantu kamu"</div>
+            <span class="school-badge">Layanan BK Digital</span>
+          </div>
+          <div class="mob-menu-grid">
+            <div class="mob-menu-card" onclick="showScreen('screen-biodata')">
+              <div class="icon" style="background:#E6F1FB;">👨‍🏫</div>
+              <h3>Biodata Guru BK</h3><p>Kenali konselor</p>
+            </div>
+            <div class="mob-menu-card" onclick="showScreen('screen-jadwal')">
+              <div class="icon" style="background:#EAF3DE;">🗓</div>
+              <h3>Cari Jadwal</h3><p>Jam Konsultasi</p>
+            </div>
+            <div class="mob-menu-card" onclick="showScreen('screen-konsul-pilih')">
+              <div class="icon" style="background:#FAEEDA;">💬</div>
+              <h3>Konsultasi</h3><p>Anonim / Langsung</p>
+            </div>
+            <div class="mob-menu-card" onclick="showScreen('screen-helpdesk')">
+              <div class="icon" style="background:#FAECE7;">🆘</div>
+              <h3>Help / CP</h3><p>Kontak bantuan</p>
+            </div>
+          </div>
+          <div class="mob-tab-bar">
+            <button class="tab-btn active" onclick="showScreen('screen-home')"><span class="tab-icon">🏠</span>Beranda</button>
+            <button class="tab-btn" onclick="showScreen('screen-konsul-pilih')"><span class="tab-icon">💬</span>Konsul</button>
+            <button class="tab-btn" onclick="showScreen('screen-helpdesk')"><span class="tab-icon">🆘</span>Help</button>
+          </div>
+        </div>
+
+        <div class="desktop-view">
+          <div class="home-hero">
+            <h1>SIBISA</h1>
+            <div class="tagline">"Hilangkan rasa malu dan ragu, karena Si Bisa selalu siap bantu kamu"</div>
+            <span class="school-badge-desk">Layanan BK Digital</span>
+          </div>
+          <div class="desk-menu-grid">
+            <div class="menu-card" onclick="showScreen('screen-biodata')">
+              <div class="icon" style="background:#E6F1FB;">👨‍🏫</div>
+              <h3>Biodata Guru BK</h3><p>Kenali konselor kami</p>
+            </div>
+            <div class="menu-card" onclick="showScreen('screen-jadwal')">
+              <div class="icon" style="background:#EAF3DE;">🗓</div>
+              <h3>Cari Jadwal</h3><p>Jam bimbingan konsultasi BK</p>
+            </div>
+            <div class="menu-card" onclick="showScreen('screen-konsul-pilih')">
+              <div class="icon" style="background:#FAEEDA;">💬</div>
+              <h3>Konsultasi</h3><p>Pilihan curhat anonim atau langsung</p>
+            </div>
+            <div class="menu-card" onclick="showScreen('screen-helpdesk')">
+              <div class="icon" style="background:#FAECE7;">🆘</div>
+              <h3>Help / CP</h3><p>Hubungi pusat bantuan & kontak</p>
+            </div>
+          </div>
+        </div>
+      </div>
+
+      <div class="screen" id="screen-biodata">
+        <div class="mobile-view">
+          <div class="mob-page-header">
+            <button class="back-btn" onclick="showScreen('screen-home')">←</button>
+            <h2>Biodata Guru BK</h2>
+          </div>
+        </div>
+        
+        <div class="desktop-view">
+          <div class="page-header-bar page-inner">
+            <button class="back-btn-inline" onclick="showScreen('screen-home')">←</button>
+            <h2>Biodata Guru BK</h2>
+          </div>
+        </div>
+
+        <div class="page-content-desktop page-inner-mobile-override">
+          <div class="info-box" style="margin: 0 32px 16px;"><p>Kenali guru BK kami sebelum konsultasi, agar kamu lebih nyaman dan siap!</p></div>
+          
+          <div style="padding: 0 32px;">
+            <div class="guru-card" onclick="kontakLangsungDariProfil('085743075250','Bu Yulidha Ayuk, S.Pd')">
+              <div class="flex-row">
+                <div class="avatar">YA</div>
+                <div class="guru-info"><h3>Bu Yulidha Ayuk, S.Pd</h3><p>Guru BK / Konselor Sekolah</p><span class="badge">Spesialis: Akademik & Karir</span></div>
+              </div>
+              <div class="guru-detail">Pendidikan: S1 Bimbingan Konseling – UPI<br>Pengalaman: 8 Tahun<br>Ruangan: BK Lantai 1<br>No HP: 085743075250</div>
+            </div>
+            <div class="guru-card" onclick="kontakLangsungDariProfil('085729057014','Pak Haryadi, S.Pd')">
+              <div class="flex-row">
+                <div class="avatar" style="background:#185FA5;">HA</div>
+                <div class="guru-info"><h3>Pak Haryadi, S.Pd</h3><p>Guru BK / Konselor Sekolah</p><span class="badge">Spesialis: Sosial & Pribadi</span></div>
+              </div>
+              <div class="guru-detail">Pendidikan: S1 Bimbingan Konseling – UNY<br>Pengalaman: 6 Tahun<br>Ruangan: BK Lantai 1<br>No HP: 085729057014</div>
+            </div>
+            <div class="guru-card" onclick="kontakLangsungDariProfil('089522001987','Bu Reva, S.Pd')">
+              <div class="flex-row">
+                <div class="avatar" style="background:#475569;">RV</div>
+                <div class="guru-info"><h3>Bu Reva, S.Pd</h3><p>Guru BK / Konselor Gen Z</p><span class="badge">Spesialis: Percintaan</span></div>
+              </div>
+              <div class="guru-detail">Pendidikan: S1 Bimbingan Konseling – UNNES<br>Pengalaman: 5 Tahun<br>Ruangan: BK Lantai 49<br>No HP: 089522001987</div>
+            </div>
+          </div>
+        </div>
+      </div>
+
+      <div class="screen" id="screen-jadwal">
+        <div class="mobile-view">
+          <div class="mob-page-header"><button class="back-btn" onclick="showScreen('screen-home')">←</button><h2>Jadwal Konsultasi</h2></div>
+        </div>
+        <div class="desktop-view">
+          <div class="page-header-bar page-inner"><button class="back-btn-inline" onclick="showScreen('screen-home')">←</button><h2>Jadwal Konsultasi BK</h2></div>
+        </div>
+
+        <div class="page-content-desktop" style="padding: 0 32px;">
+          <div class="info-box"><p>Sesi konsultasi langsung berdurasi 1 jam per orang di ruangan guru terkait.</p></div>
+          <div class="jadwal-card">
+            <h3>Bu Yulidha Ayuk, S.Pd (Lantai 1)</h3>
+            <div class="jadwal-row"><span class="jadwal-day">Senin</span><span class="jadwal-time">08.00 – 12.00</span></div>
+            <div class="jadwal-row"><span class="jadwal-day">Rabu</span><span class="jadwal-time">09.00 – 12.00</span></div>
+            <div class="jadwal-row"><span class="jadwal-day">Jumat</span><span class="jadwal-time">10.00 – 13.00</span></div>
+          </div>
+          <div class="jadwal-card">
+            <h3>Pak Haryadi, S.Pd (Lantai 1)</h3>
+            <div class="jadwal-row"><span class="jadwal-day">Selasa</span><span class="jadwal-time">08.00 – 11.00</span></div>
+            <div class="jadwal-row"><span class="jadwal-day">Kamis</span><span class="jadwal-time">09.00 – 12.00</span></div>
+            <div class="jadwal-row"><span class="jadwal-day">Sabtu</span><span class="jadwal-time">08.00 – 10.00</span></div>
+          </div>
+          <div class="jadwal-card">
+            <h3>Bu Reva, S.Pd (Lantai 49)</h3>
+            <div class="jadwal-row"><span class="jadwal-day">Senin</span><span class="jadwal-time">09.00 – 13.30</span></div>
+            <div class="jadwal-row"><span class="jadwal-day">Rabu</span><span class="jadwal-time">07.00 – 12.00</span></div>
+            <div class="jadwal-row"><span class="jadwal-day">Kamis</span><span class="jadwal-time">08.00 – 14.00</span></div>
+          </div>
+        </div>
+      </div>
+
+      <div class="screen" id="screen-konsul-pilih">
+        <div class="mobile-view">
+          <div class="mob-page-header"><button class="back-btn" onclick="showScreen('screen-home')">←</button><h2>Konsultasi Sekarang</h2></div>
+        </div>
+        <div class="desktop-view">
+          <div class="page-header-bar page-inner"><button class="back-btn-inline" onclick="showScreen('screen-home')">←</button><h2>Konsultasi Sekarang</h2></div>
+        </div>
+        <div style="padding: 0 32px;">
+          <div class="info-box"><p>Pilih tipe konsultasi sesuai kenyamanan kamu.</p></div>
+          <div class="konsul-options">
+            <div class="konsul-card" onclick="showScreen('screen-konsul-anon')">
+              <div class="big-icon">🎭</div><h3>Anonim</h3><p>Curhat tanpa identitas. Dijamin rahasia penuh.</p>
+            </div>
+            <div class="konsul-card recommended" onclick="showScreen('screen-konsul-langsung')">
+              <div style="background:#1150ab;color:#fff;font-size:10px;border-radius:10px;padding:2px 8px;margin-bottom:6px;display:inline-block;">Direkomendasikan</div>
+              <div class="big-icon">🤝</div><h3>Konsultasi Langsung</h3><p>Isi identitas & langsung chat via WhatsApp.</p>
+            </div>
+          </div>
+        </div>
+      </div>
+
+      <div class="screen" id="screen-konsul-anon">
+        <div class="mobile-view">
+          <div class="mob-page-header"><button class="back-btn" onclick="showScreen('screen-konsul-pilih')">←</button><h2>Konsultasi Anonim</h2></div>
+        </div>
+        <div class="desktop-view">
+          <div class="page-header-bar page-inner"><button class="back-btn-inline" onclick="showScreen('screen-konsul-pilih')">←</button><h2>Konsultasi Anonim</h2></div>
+        </div>
+        
+        <div class="page-content-desktop" style="padding: 0 32px;">
+          <div class="anon-note"><p>Mode anonim: identitasmu dirahasiakan sepenuhnya oleh sistem SIBISA.</p></div>
+          <div class="form-section">
+            <h3>Pilih Kategori Masalah</h3>
+            <div class="masalah-grid" id="masalah-anon-container">
+              <div class="masalah-chip selected" onclick="toggleChip(this)">Akademik</div>
+              <div class="masalah-chip" onclick="toggleChip(this)">Karir & Masa Depan</div>
+              <div class="masalah-chip" onclick="toggleChip(this)">Sosial Interaksi</div>
+              <div class="masalah-chip" onclick="toggleChip(this)">Kesehatan Mental</div>
+              <div class="masalah-chip" onclick="toggleChip(this)">Bullying</div>
+              <div class="masalah-chip" onclick="toggleChip(this)">Lainnya</div>
+            </div>
+          </div>
+          <div class="form-section">
+            <h3>Pilih Konselor & Ketik Keluhan</h3>
+            <div class="form-group">
+              <select id="anon-guru-select" style="margin-bottom:12px;">
+                <option value="085743075250">Bu Yulidha Ayuk (Akademik & Karir)</option>
+                <option value="085729057014">Pak Haryadi (Sosial & Pribadi)</option>
+                <option value="089522001987">Bu Reva (Percintaan / Gen Z)</option>
+              </select>
+              <textarea id="anon-pesan-text" style="height:100px;resize:none;" placeholder="Tulis keluhan singkatmu di sini..."></textarea>
+            </div>
+          </div>
+          <button class="wa-btn" onclick="kirimAnonimUnified()"><span style="font-size:18px;">💬</span> Mulai Chat Anonim via WhatsApp</button>
+        </div>
+      </div>
+
+      <div class="screen" id="screen-konsul-langsung">
+        <div class="mobile-view">
+          <div class="mob-page-header"><button class="back-btn" onclick="showScreen('screen-konsul-pilih')">←</button><h2>Konsultasi Langsung</h2></div>
+        </div>
+        <div class="desktop-view">
+          <div class="page-header-bar page-inner"><button class="back-btn-inline" onclick="showScreen('screen-konsul-pilih')">←</button><h2>Konsultasi Langsung</h2></div>
+        </div>
+        <div class="page-content-desktop" style="padding: 0 32px;">
+          <div class="form-section">
+            <h3>Data Siswa</h3>
+            <div class="form-row">
+              <div class="form-group"><label>Nama Lengkap</label><input type="text" id="langsung-nama" placeholder="Nama sesuai Rapor"></div>
+              <div class="form-group"><label>Kelas</label>
+                <select id="langsung-kelas">
+                  <option>X MIPA 1</option><option>XI MIPA 2</option><option>XII IPS 1</option>
+                </select>
+              </div>
+            </div>
+            <div class="form-group">
+              <label>Pilih Guru BK</label>
+              <select id="langsung-guru">
+                <option value="085743075250">Bu Yulidha Ayuk (Akademik & Karir)</option>
+                <option value="085729057014">Pak Haryadi (Sosial & Pribadi)</option>
+                <option value="089522001987">Bu Reva (Percintaan / Gen Z)</option>
+              </select>
+            </div>
+          </div>
+          <div class="form-section">
+            <h3>Kategori Masalah</h3>
+            <div class="masalah-grid" id="masalah-langsung-container">
+              <div class="masalah-chip selected" onclick="toggleChip(this)">Akademik</div>
+              <div class="masalah-chip" onclick="toggleChip(this)">Kesehatan Mental</div>
+              <div class="masalah-chip" onclick="toggleChip(this)">Sosial & Teman</div>
+            </div>
+          </div>
+          <button class="wa-btn" onclick="kirimLangsungUnified()">💬 Kirim & Mulai Chat via WhatsApp</button>
+        </div>
+      </div>
+
+      <div class="screen" id="screen-helpdesk">
+        <div class="mobile-view">
+          <div class="mob-page-header"><button class="back-btn" onclick="showScreen('screen-home')">←</button><h2>Help & Pusat Bantuan</h2></div>
+        </div>
+        <div class="desktop-view">
+          <div class="page-header-bar page-inner"><button class="back-btn-inline" onclick="showScreen('screen-home')">←</button><h2>Help & CP Informasi</h2></div>
+        </div>
+        <div class="page-content-desktop" style="padding: 0 32px;">
+          <div class="info-box"><p>Layanan kontak bantuan operasional jam kerja sekolah (07.00–15.00).</p></div>
+          <div class="help-card" onclick="window.open('tel:02933219677')"><div class="help-icon" style="background:#E6F1FB;">📞</div><div><h3>Telepon Sekolah</h3><p>(0293) 3219677</p></div></div>
+          <div class="help-card" onclick="window.open('https://wa.me/6285743075250')"><div class="help-icon" style="background:#EAF3DE;">💬</div><div><h3>WhatsApp Bu Yulidha Ayuk</h3><p>085743075250</p></div></div>
+          <div class="help-card" onclick="window.open('https://wa.me/6285729057014')"><div class="help-icon" style="background:#EAF3DE;">💬</div><div><h3>WhatsApp Pak Haryadi</h3><p>085729057014</p></div></div>
+          <div class="help-card" onclick="window.open('https://wa.me/6289522001987')"><div class="help-icon" style="background:#EAF3DE;">💬</div><div><h3>WhatsApp Bu Reva</h3><p>089522001987</p></div></div>
+          <div class="help-card" onclick="window.open('mailto:sibisa.bk@gmail.com')"><div class="help-icon" style="background:#FAECE7;">✉️</div><div><h3>Email BK</h3><p>sibisa.bk@gmail.com</p></div></div>
+        </div>
+      </div>
+
+    </div></div></div><script src="script.js"></script>
+</body>
+</html>

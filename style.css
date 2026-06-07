@@ -1,0 +1,955 @@
+* { 
+  box-sizing: border-box; 
+  margin: 0; 
+  padding: 0; 
+}
+
+body { 
+  font-family: 'Space Grotesk', sans-serif; 
+  background: #e8eef6; 
+  color: #1e293b; 
+}
+
+/* ===== DESKTOP LAYOUT ===== */
+.app-shell { 
+  display: flex; 
+  min-height: 100vh; 
+}
+
+.sidebar {
+  width: 260px; 
+  min-width: 260px;
+  background: #1150ab; 
+  display: flex; 
+  flex-direction: column;
+  position: sticky; 
+  top: 0; 
+  height: 100vh; 
+  z-index: 20;
+}
+
+.sidebar-brand { 
+  padding: 24px 20px 20px; 
+  border-bottom: 1px solid rgba(255,255,255,0.12); 
+}
+
+.sidebar-brand .logo-row { 
+  display: flex; 
+  align-items: center; 
+  gap: 10px; 
+}
+
+.sidebar-brand .logo-circle {
+  width: 38px; 
+  height: 38px; 
+  border-radius: 50%; 
+  background: #fff;
+  display: flex; 
+  align-items: center; 
+  justify-content: center;
+  font-weight: 500; 
+  font-size: 11px; 
+  color: #1150ab; 
+  overflow: hidden; 
+  flex-shrink: 0;
+}
+
+.sidebar-brand .logo-circle img { 
+  width: 100%; 
+  height: 100%; 
+  border-radius: 50%; 
+  object-fit: cover; 
+}
+
+.sidebar-brand .brand-name { 
+  color: #fff; 
+  font-weight: 600; 
+  font-size: 18px; 
+  letter-spacing: 1px; 
+}
+
+.sidebar-brand .brand-sub { 
+  color: #B5D4F4; 
+  font-size: 11px; 
+  margin-top: 2px; 
+}
+
+.sidebar-school { 
+  padding: 12px 20px; 
+  border-bottom: 1px solid rgba(255,255,255,0.12); 
+}
+
+.sidebar-school .school-badge { 
+  background: rgba(255,255,255,0.15); 
+  border-radius: 20px; 
+  padding: 5px 12px; 
+  font-size: 11px; 
+  color: #E6F1FB; 
+  display: inline-block; 
+}
+
+.sidebar-nav { 
+  flex: 1; 
+  padding: 16px 0; 
+}
+
+.sidebar-nav .nav-item {
+  display: flex; 
+  align-items: center; 
+  gap: 12px; 
+  padding: 11px 20px;
+  color: rgba(255,255,255,0.7); 
+  cursor: pointer; 
+  font-size: 14px;
+  border: none; 
+  background: none; 
+  width: 100%; 
+  text-align: left;
+  font-family: inherit; 
+  transition: background 0.15s, color 0.15s;
+  border-left: 3px solid transparent;
+}
+
+.sidebar-nav .nav-item:hover { 
+  background: rgba(255,255,255,0.08); 
+  color: #fff; 
+}
+
+.sidebar-nav .nav-item.active { 
+  background: rgba(255,255,255,0.15); 
+  color: #fff; 
+  font-weight: 500; 
+  border-left-color: #fff; 
+}
+
+.sidebar-nav .nav-icon { 
+  font-size: 18px; 
+  width: 24px; 
+  text-align: center; 
+}
+
+.sidebar-footer { 
+  padding: 16px 20px; 
+  border-top: 1px solid rgba(255,255,255,0.12); 
+  font-size: 11px; 
+  color: rgba(255,255,255,0.4); 
+  line-height: 1.5; 
+}
+
+.main-content { 
+  flex: 1; 
+  display: flex; 
+  flex-direction: column; 
+  min-height: 100vh; 
+  background: #e8eef6; 
+}
+
+.topbar {
+  background: #fff; 
+  border-bottom: 1px solid #e2e8f0;
+  padding: 14px 32px; 
+  display: flex; 
+  align-items: center;
+  justify-content: space-between; 
+  position: sticky; 
+  top: 0; 
+  z-index: 10;
+}
+
+.topbar-title { 
+  font-size: 16px; 
+  font-weight: 500; 
+  color: #1150ab; 
+}
+
+.topbar-school { 
+  display: flex; 
+  align-items: center; 
+  gap: 8px; 
+}
+
+.school-logo-top { 
+  width: 34px; 
+  height: 34px; 
+  border-radius: 50%; 
+  background: #FFD700; 
+  display: flex; 
+  align-items: center; 
+  justify-content: center; 
+  font-size: 10px; 
+  font-weight: 600; 
+  color: #1150ab; 
+}
+
+/* ===== DEVICE FRAME ===== */
+.device-frame { 
+  display: contents; 
+}
+
+/* ===== SCREENS MECHANISM ===== */
+.screen { 
+  display: none; 
+  flex: 1; 
+}
+
+.screen.active { 
+  display: block; 
+}
+
+/* ===== DESKTOP ELEMENTS DEFAULTS ===== */
+.desktop-view { 
+  display: block; 
+}
+
+.mobile-view { 
+  display: none; 
+}
+
+/* HOME DESKTOP */
+.home-hero {
+  background: linear-gradient(135deg, #1150ab 0%, #1e3a8a 100%);
+  border-radius: 16px; 
+  padding: 36px 32px; 
+  color: #fff;
+  margin: 28px 32px 20px; 
+  position: relative; 
+  overflow: hidden;
+}
+
+.home-hero::before { 
+  content: ''; 
+  position: absolute; 
+  right: -40px; 
+  top: -40px; 
+  width: 200px; 
+  height: 200px; 
+  border-radius: 50%; 
+  background: rgba(255,255,255,0.06); 
+}
+
+.home-hero::after { 
+  content: ''; 
+  position: absolute; 
+  right: 60px; 
+  bottom: -60px; 
+  width: 150px; 
+  height: 150px; 
+  border-radius: 50%; 
+  background: rgba(255,255,255,0.04); 
+}
+
+.home-hero h1 { 
+  font-size: 32px; 
+  font-weight: 600; 
+  letter-spacing: 2px; 
+  margin-bottom: 10px; 
+}
+
+.home-hero .tagline { 
+  font-size: 14px; 
+  color: #B5D4F4; 
+  max-width: 480px; 
+  line-height: 1.6; 
+}
+
+.home-hero .school-badge-desk { 
+  background: rgba(255,255,255,0.15); 
+  border-radius: 20px; 
+  padding: 4px 14px; 
+  font-size: 12px; 
+  color: #E6F1FB; 
+  display: inline-block; 
+  margin-top: 12px; 
+}
+
+.desk-menu-grid { 
+  display: grid; 
+  grid-template-columns: repeat(4, 1fr); 
+  gap: 16px; 
+  padding: 0 32px 28px; 
+}
+
+.menu-card {
+  background: #fff; 
+  border-radius: 14px; 
+  border: 1px solid #B5D4F4;
+  padding: 22px 16px; 
+  cursor: pointer;
+  transition: box-shadow 0.15s, border-color 0.15s, transform 0.15s; 
+  text-align: center;
+}
+
+.menu-card:hover { 
+  border-color: #1150ab; 
+  box-shadow: 0 4px 16px rgba(17,80,171,0.12); 
+  transform: translateY(-2px); 
+}
+
+.menu-card .icon { 
+  width: 52px; 
+  height: 52px; 
+  border-radius: 14px; 
+  margin: 0 auto 12px; 
+  display: flex; 
+  align-items: center; 
+  justify-content: center; 
+  font-size: 24px; 
+}
+
+.menu-card h3 { 
+  font-size: 14px; 
+  font-weight: 500; 
+  color: #1150ab; 
+}
+
+.menu-card p { 
+  font-size: 12px; 
+  color: #64748b; 
+  margin-top: 4px; 
+}
+
+/* Inner pages */
+.page-inner { 
+  padding: 28px 32px; 
+}
+
+.page-header-bar { 
+  display: flex; 
+  align-items: center; 
+  gap: 12px; 
+  margin-bottom: 20px; 
+}
+
+.back-btn-inline { 
+  background: #E6F1FB; 
+  border: none; 
+  color: #1150ab; 
+  cursor: pointer; 
+  font-size: 18px; 
+  padding: 6px 12px; 
+  border-radius: 8px; 
+  line-height: 1; 
+  transition: background 0.15s; 
+  font-family: inherit; 
+}
+
+.back-btn-inline:hover { 
+  background: #B5D4F4; 
+}
+
+.page-header-bar h2 { 
+  color: #1150ab; 
+  font-size: 20px; 
+  font-weight: 500; 
+}
+
+.page-content-desktop { 
+  max-width: 800px; 
+}
+
+/* Cards & Shared components */
+.guru-card { 
+  background: #fff; 
+  border-radius: 14px; 
+  border: 1px solid #B5D4F4; 
+  padding: 18px; 
+  margin-bottom: 14px; 
+  cursor: pointer; 
+  transition: border-color 0.15s, box-shadow 0.15s; 
+}
+
+.guru-card:hover { 
+  border-color: #1150ab; 
+  box-shadow: 0 2px 12px rgba(17,80,171,0.1); 
+}
+
+.guru-card .avatar { 
+  width: 52px; 
+  height: 52px; 
+  border-radius: 50%; 
+  background: #1150ab; 
+  color: #fff; 
+  display: flex; 
+  align-items: center; 
+  justify-content: center; 
+  font-weight: 500; 
+  font-size: 16px; 
+  flex-shrink: 0; 
+}
+
+.guru-info { 
+  flex: 1; 
+}
+
+.guru-info h3 { 
+  font-size: 15px; 
+  font-weight: 500; 
+  color: #1150ab; 
+}
+
+.guru-info p { 
+  font-size: 13px; 
+  color: #64748b; 
+  margin-top: 2px; 
+}
+
+.badge { 
+  display: inline-block; 
+  background: #E6F1FB; 
+  color: #1150ab; 
+  font-size: 11px; 
+  border-radius: 20px; 
+  padding: 2px 10px; 
+  margin-top: 6px; 
+}
+
+.guru-detail { 
+  margin-top: 12px; 
+  font-size: 13px; 
+  color: #64748b; 
+  line-height: 1.8; 
+}
+
+.flex-row { 
+  display: flex; 
+  align-items: center; 
+  gap: 12px; 
+}
+
+.jadwal-card { 
+  background: #fff; 
+  border-radius: 14px; 
+  border: 1px solid #B5D4F4; 
+  padding: 16px 18px; 
+  margin-bottom: 12px; 
+}
+
+.jadwal-card h3 { 
+  font-size: 14px; 
+  font-weight: 500; 
+  color: #1150ab; 
+  margin-bottom: 8px; 
+}
+
+.jadwal-row { 
+  display: flex; 
+  justify-content: space-between; 
+  align-items: center; 
+  padding: 5px 0; 
+  border-bottom: 1px solid #f1f5f9; 
+}
+
+.jadwal-row:last-child { 
+  border-bottom: none; 
+}
+
+.jadwal-day { 
+  font-size: 13px; 
+  color: #64748b; 
+}
+
+.jadwal-time { 
+  font-size: 13px; 
+  font-weight: 500; 
+  color: #1150ab; 
+  background: #E6F1FB; 
+  padding: 3px 10px; 
+  border-radius: 10px; 
+}
+
+.konsul-options { 
+  display: grid; 
+  grid-template-columns: 1fr 1fr; 
+  gap: 16px; 
+  max-width: 560px; 
+}
+
+.konsul-card { 
+  background: #fff; 
+  border-radius: 14px; 
+  border: 2px solid #B5D4F4; 
+  padding: 24px 18px; 
+  cursor: pointer; 
+  text-align: center; 
+  transition: border-color 0.15s, box-shadow 0.15s, transform 0.15s; 
+}
+
+.konsul-card:hover { 
+  border-color: #1150ab; 
+  box-shadow: 0 4px 16px rgba(17,80,171,0.12); 
+  transform: translateY(-2px); 
+}
+
+.konsul-card .big-icon { 
+  font-size: 36px; 
+  margin-bottom: 10px; 
+}
+
+.konsul-card h3 { 
+  font-size: 15px; 
+  font-weight: 500; 
+  color: #1150ab; 
+}
+
+.konsul-card p { 
+  font-size: 12px; 
+  color: #64748b; 
+  margin-top: 6px; 
+  line-height: 1.5; 
+}
+
+.konsul-card.recommended { 
+  border-color: #1150ab; 
+}
+
+.form-section { 
+  background: #fff; 
+  border-radius: 14px; 
+  border: 1px solid #B5D4F4; 
+  padding: 18px; 
+  margin-bottom: 14px; 
+}
+
+.form-section h3 { 
+  font-size: 14px; 
+  font-weight: 500; 
+  color: #1150ab; 
+  margin-bottom: 12px; 
+}
+
+.form-group { 
+  margin-bottom: 12px; 
+}
+
+.form-group label { 
+  font-size: 12px; 
+  color: #64748b; 
+  display: block; 
+  margin-bottom: 5px; 
+}
+
+.form-group input, .form-group select, .form-group textarea { 
+  width: 100%; 
+  padding: 9px 12px; 
+  border: 1px solid #B5D4F4; 
+  border-radius: 8px; 
+  font-size: 13px; 
+  background: #fff; 
+  color: #1e293b; 
+  font-family: inherit; 
+  transition: border-color 0.15s; 
+}
+
+.form-group input:focus, .form-group select:focus, .form-group textarea:focus { 
+  outline: none; 
+  border-color: #1150ab; 
+}
+
+.form-row { 
+  display: grid; 
+  grid-template-columns: 1fr 1fr; 
+  gap: 12px; 
+}
+
+.masalah-grid { 
+  display: grid; 
+  grid-template-columns: repeat(3, 1fr); 
+  gap: 8px; 
+  margin-top: 4px; 
+}
+
+.masalah-chip { 
+  border: 1px solid #B5D4F4; 
+  border-radius: 20px; 
+  padding: 6px 10px; 
+  font-size: 12px; 
+  cursor: pointer; 
+  text-align: center; 
+  color: #1150ab; 
+  background: #fff; 
+  transition: background 0.15s, border-color 0.15s; 
+}
+
+.masalah-chip:hover { 
+  border-color: #1150ab; 
+}
+
+.masalah-chip.selected { 
+  background: #1150ab; 
+  color: #fff; 
+  border-color: #1150ab; 
+}
+
+.wa-btn { 
+  padding: 12px 24px; 
+  background: #25D366; 
+  color: #fff; 
+  border: none; 
+  border-radius: 8px; 
+  font-size: 14px; 
+  font-weight: 500; 
+  cursor: pointer; 
+  display: inline-flex; 
+  align-items: center; 
+  gap: 8px; 
+  transition: background 0.15s; 
+  font-family: inherit; 
+}
+
+.wa-btn:hover { 
+  background: #1ebe5b; 
+}
+
+.submit-btn { 
+  padding: 12px 24px; 
+  background: #1150ab; 
+  color: #fff; 
+  border: none; 
+  border-radius: 8px; 
+  font-size: 14px; 
+  font-weight: 500; 
+  cursor: pointer; 
+  transition: background 0.15s; 
+  font-family: inherit; 
+}
+
+.submit-btn:hover { 
+  background: #1e3a8a; 
+}
+
+.info-box { 
+  background: #E6F1FB; 
+  border-radius: 8px; 
+  padding: 12px 14px; 
+  margin-bottom: 16px; 
+}
+
+.info-box p { 
+  font-size: 13px; 
+  color: #1150ab; 
+  line-height: 1.6; 
+}
+
+.anon-note { 
+  background: #FAEEDA; 
+  border-radius: 8px; 
+  padding: 10px 14px; 
+  margin-bottom: 14px; 
+}
+
+.anon-note p { 
+  font-size: 13px; 
+  color: #BA7517; 
+}
+
+.help-card { 
+  background: #fff; 
+  border-radius: 14px; 
+  border: 1px solid #B5D4F4; 
+  padding: 16px 18px; 
+  margin-bottom: 10px; 
+  display: flex; 
+  align-items: center; 
+  gap: 14px; 
+  cursor: pointer; 
+  transition: border-color 0.15s, box-shadow 0.15s; 
+}
+
+.help-card:hover { 
+  border-color: #1150ab; 
+  box-shadow: 0 2px 10px rgba(17,80,171,0.1); 
+}
+
+.help-icon { 
+  width: 44px; 
+  height: 44px; 
+  border-radius: 50%; 
+  display: flex; 
+  align-items: center; 
+  justify-content: center; 
+  font-size: 20px; 
+  flex-shrink: 0; 
+}
+
+.help-card h3 { 
+  font-size: 14px; 
+  font-weight: 500; 
+  color: #1150ab; 
+}
+
+.help-card p { 
+  font-size: 13px; 
+  color: #64748b; 
+  margin-top: 2px; 
+}
+
+/* ===== MOBILE RESPONSIVE (Layar ≤ 768px) ===== */
+@media (max-width: 768px) {
+  body { 
+    background: #e8edf5; 
+    padding: 12px; 
+  }
+  
+  .app-shell { 
+    display: block; 
+  }
+  
+  .sidebar { 
+    display: none; 
+  }
+  
+  .topbar { 
+    display: none; 
+  }
+
+  .device-frame { 
+    display: block; 
+    background: #E8EDF5; 
+    padding: 0; 
+    border-radius: 20px; 
+    max-width: 380px; 
+    margin: 0 auto; 
+  }
+  
+  .device-notch { 
+    width: 80px; 
+    height: 6px; 
+    background: #B5D4F4; 
+    border-radius: 3px; 
+    margin: 0 auto 8px; 
+  }
+
+  .screen { 
+    display: none !important; 
+    background: #fff; 
+    border: 0.5px solid #cbd5e1; 
+    border-radius: 12px; 
+    overflow: hidden; 
+  }
+  
+  .screen.active { 
+    display: flex !important; 
+    flex-direction: column; 
+    min-height: 620px; 
+  }
+
+  .desktop-view { 
+    display: none !important; 
+  }
+  
+  .mobile-view { 
+    display: block; 
+  }
+
+  .mob-navbar { 
+    display: flex; 
+    background: #1150ab; 
+    padding: 12px 16px; 
+    align-items: center; 
+    justify-content: space-between; 
+    flex-shrink: 0; 
+  }
+  
+  .mob-navbar .brand { 
+    display: flex; 
+    align-items: center; 
+    gap: 8px; 
+  }
+  
+  .mob-navbar .logo-circle { 
+    width: 32px; 
+    height: 32px; 
+    border-radius: 50%; 
+    background: #fff; 
+    display: flex; 
+    align-items: center; 
+    justify-content: center; 
+    overflow: hidden; 
+  }
+  
+  .mob-navbar .logo-circle img { 
+    width: 100%; 
+    height: 100%; 
+    object-fit: cover; 
+  }
+  
+  .mob-navbar .brand-name { 
+    color: #fff; 
+    font-weight: 500; 
+    font-size: 15px; 
+  }
+  
+  .mob-navbar .school-logo { 
+    width: 32px; 
+    height: 32px; 
+    border-radius: 50%; 
+    background: #FFD700; 
+    display: flex; 
+    align-items: center; 
+    justify-content: center; 
+    font-size: 10px; 
+    font-weight: 500; 
+    color: #1150ab; 
+  }
+
+  .mob-hero { 
+    background: linear-gradient(135deg, #1150ab 0%, #1e3a8a 100%); 
+    padding: 24px 16px; 
+    text-align: center; 
+    color: #fff; 
+    flex-shrink: 0; 
+  }
+  
+  .mob-hero h1 { 
+    font-size: 22px; 
+    font-weight: 600; 
+  }
+  
+  .mob-hero .tagline { 
+    font-size: 12px; 
+    color: #B5D4F4; 
+    margin-top: 6px; 
+    line-height: 1.5; 
+  }
+  
+  .mob-hero .school-badge { 
+    background: rgba(255,255,255,0.15); 
+    border-radius: 20px; 
+    padding: 4px 12px; 
+    font-size: 11px; 
+    color: #E6F1FB; 
+    display: inline-block; 
+    margin-top: 8px; 
+  }
+
+  .mob-menu-grid { 
+    display: grid; 
+    grid-template-columns: 1fr 1fr; 
+    gap: 12px; 
+    padding: 16px; 
+    background: #F4F8FF; 
+    flex: 1; 
+  }
+  
+  .mob-menu-card { 
+    background: #fff; 
+    border-radius: 12px; 
+    border: 0.5px solid #B5D4F4; 
+    padding: 14px 12px; 
+    cursor: pointer; 
+    text-align: center; 
+  }
+  
+  .mob-menu-card .icon { 
+    width: 40px; 
+    height: 40px; 
+    border-radius: 50%; 
+    margin: 0 auto 8px; 
+    display: flex; 
+    align-items: center; 
+    justify-content: center; 
+    font-size: 18px; 
+  }
+  
+  .mob-menu-card h3 { 
+    font-size: 13px; 
+    font-weight: 500; 
+    color: #1150ab; 
+  }
+  
+  .mob-menu-card p { 
+    font-size: 11px; 
+    color: #64748b; 
+    margin-top: 3px; 
+  }
+
+  .mob-page-header { 
+    display: flex; 
+    background: #1150ab; 
+    padding: 12px 16px; 
+    align-items: center; 
+    gap: 10px; 
+    flex-shrink: 0; 
+  }
+  
+  .mob-page-header .back-btn { 
+    background: none; 
+    border: none; 
+    color: #fff; 
+    cursor: pointer; 
+    font-size: 18px; 
+  }
+  
+  .mob-page-header h2 { 
+    color: #fff; 
+    font-size: 15px; 
+    font-weight: 500; 
+  }
+
+  .mob-page-content { 
+    padding: 16px; 
+    flex: 1; 
+    overflow-y: auto; 
+    background: #F4F8FF; 
+    text-align: left; 
+  }
+
+  .mob-tab-bar { 
+    display: flex; 
+    background: #fff; 
+    border-top: 0.5px solid #B5D4F4; 
+    flex-shrink: 0; 
+  }
+  
+  .tab-btn { 
+    flex: 1; 
+    padding: 8px 4px; 
+    text-align: center; 
+    font-size: 9px; 
+    color: #888; 
+    cursor: pointer; 
+    border: none; 
+    background: none; 
+    font-family: inherit; 
+  }
+  
+  .tab-btn.active { 
+    color: #1150ab; 
+    font-weight: 500; 
+  }
+  
+  .tab-icon { 
+    font-size: 16px; 
+    display: block; 
+    margin-bottom: 1px; 
+  }
+
+  .guru-card { 
+    padding: 12px; 
+    border-radius: 12px; 
+    border-width: 0.5px; 
+  }
+  
+  .guru-card .avatar { 
+    width: 44px; 
+    height: 44px; 
+    font-size: 14px; 
+  }
+  
+  .form-row { 
+    grid-template-columns: 1fr; 
+  }
+  
+  .masalah-grid { 
+    grid-template-columns: 1fr 1fr; 
+  }
+  
+  .konsul-options { 
+    grid-template-columns: 1fr; 
+  }
+  
+  .wa-btn, .submit-btn { 
+    width: 100%; 
+    justify-content: center; 
+  }
+}
